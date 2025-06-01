@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    foreach(NewsItem item in item)
+    {
+    <div class="text-center">
+        <main>
+            <section>
+                <h1>@item.Title</h1>
+                <p>@item.Content</p>
+            </section>
+            <figure>
+                <section>@item.ImageUrl</section>
+            </figure>
+        </main>
+    </div>
+    }
+}
