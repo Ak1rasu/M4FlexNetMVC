@@ -1,0 +1,24 @@
+﻿@using WebRequests.Webservice
+
+@{
+    ViewData["Title"] = "Home Page";
+
+    // Nieuws ophalen
+    NewsService newsService = new NewsService();
+    string[] newsHeaders = newsService.GetNewsHeaders();
+
+    // Pokémon JSON ophalen
+    FavPokeService pokeService = new FavPokeService();
+    string favPokemonJson = pokeService.GetFavPokemonJson();
+}
+
+<h2>Laatste Nieuws</h2>
+<ul>
+@foreach (var header in newsHeaders)
+{
+    <li>@header</li>
+}
+</ul>
+
+<h2>Favoriete Pokémon (JSON)</h2>
+<pre>@favPokemonJson</pre>
